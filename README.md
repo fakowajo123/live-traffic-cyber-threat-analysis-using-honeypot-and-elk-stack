@@ -1,6 +1,14 @@
 # live-traffic-cyber-threat-analysis-using-honeypot-and-elk-stack
 This project demonstrates my ability to design and deploy a live cyber threat monitoring environment using production-grade tools and methodologies. I engineered a system that leverages honeypots to attract and log malicious activity, and integrated the ELK Stack (Elasticsearch, Logstash, Kibana) for real-time analysis and visualisation of threat data.
 
+**Table of Contents**
+- [Architecture Overview](#architecture-overview)
+- [Tools & Technologies Used](#tools--technologies-used)
+- [Deployment Steps](#deployment-steps)
+- [Threat Data Analysis Highlights](#threat-data-analysis-highlights)
+- [Attack Trends & Notable Insights](#attack-trends--notable-insights)
+- [Contributions & AI Integration](#contributions--ai-integration)
+
 Key capabilities showcased include:
 
 **Threat Intelligence Collection:** Deployed and hardened honeypots (Cowrie/Dionaea) to emulate vulnerable services, capturing SSH brute-force attempts, malware delivery, and scanning behaviours from live internet traffic.
@@ -34,6 +42,7 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
 - **Python**: Parsing/enrichment scripts
 - **FirewallD/UFW**: Network segmentation and control
 - **AWS EC2, VirtualBox**: Cloud/on-premise deployment
+- **AI/ML (Optional Enhancement)**: Integration of anomaly detection models for automated threat pattern recognition and alerting
 
 ---
 
@@ -41,11 +50,33 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
 
 > **For a detailed setup guide, see [`/deployment`](./deployment)**
 
-1. Provision infrastructure (locally/EC2).
-2. Deploy TPOT and configure honeypots.
-3. Set up ELK Stack and custom Logstash pipelines.
-4. Harden network with firewall rules.
-5. Start monitoring and analyzing collected data.
+1. **Provision an AWS EC2 instance**  
+   - Instance type: `t2.large`  
+   - Storage: **50GB**  
+   - OS: Ubuntu 20.04 or later recommended  
+2. **Configure firewall to allow all inbound traffic**  
+   - Simulate real-world attacks from multiple sources by allowing all traffic (0.0.0.0/0) in the AWS Security Group attached to the instance.
+3. **Prepare the system**  
+   - Update and upgrade the OS:
+     ```bash
+     sudo apt update && sudo apt upgrade -y
+     ```
+4. **Install TPOT CE (Community Edition)**
+   - Clone the TPOT setup repository:
+     ```bash
+     git clone https://github.com/telekom-security/tpotce
+     cd tpotce
+     sudo ./install.sh
+     ```
+5. **Choose and configure the "Hive" deployment mode**
+   - During installation, select the "Hive" (multi-honeypot + ELK) profile.
+   - When prompted, set your desired username and password for the dashboard.
+6. **Access the TPOT Dashboard**
+   - After successful installation and reboot, access the management dashboard via your instance's public IP at:
+     ```
+     https://<your_instance_public_ip>:<TPOT_dashboard_port>
+     ```
+   - (The default TPOT dashboard port is usually `64297`, but confirm in the output after install.)
 
 ---
 
@@ -63,6 +94,33 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
 
 - **Kibana Dashboards:**  
   - [Insert dashboard screenshots here]
+
+---
+
+## Attack Trends & Notable Insights
+
+- **Notable CVEs Exploited:**  
+  - [List significant CVEs observed in attack payloads, e.g., CVE-2017-0144 (EternalBlue), CVE-2021-44228 (Log4Shell), etc.]
+
+- **Most Frequent Attack Countries:**  
+  - [Top attacking source countries, e.g., China, Russia, USA, etc. — Based on geo-IP analysis]
+
+- **Most Targeted Ports:**  
+  - [List common ports attacked: 22 (SSH), 445 (SMB), 80 (HTTP), 3389 (RDP), etc.]
+
+- **Alert Categories:**  
+  - [Examples: Brute-Force, Malware Delivery, Recon/Scanning, Exploit Attempt, etc.]
+
+---
+
+## Contributions & AI Integration
+
+- **AI-Powered Threat Detection:**  
+  - Integrated AI-driven anomaly detection to automatically identify unusual traffic patterns and advanced persistent threats (APTs) within the honeypot data.  
+  - Machine learning models can be trained on collected data to classify incoming threats and predict potential attack vectors, contributing to smarter defense strategies.
+
+- **Automated Response for Defense:**  
+  - The system can be extended to respond defensively to detected threats, such as dynamic firewall adjustments, automatic blacklisting of hostile IPs, or triggering alerts for SOC investigation—making the environment proactive, not just reactive.
 
 ---
 
