@@ -75,6 +75,7 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
    - After successful installation and reboot, access the management dashboard via your instance's public IP at:
      ```
      https://<your_instance_public_ip>:<TPOT_dashboard_port>
+     https://github.com/fakowajo123/live-traffic-cyber-threat-analysis-using-honeypot-and-elk-stack/blob/main/screenshots/kibana%20Dashboard.jpg
      ```
    - (The default TPOT dashboard port is usually `64297`, but confirm in the output after install.)
 
@@ -93,23 +94,23 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
   - Suspicious command patterns
 
 - **Kibana Dashboards:**  
-  - [Insert dashboard screenshots here]
+  - (https://github.com/fakowajo123/live-traffic-cyber-threat-analysis-using-honeypot-and-elk-stack/blob/main/screenshots/Kibana%20Dashboard..jpg)
 
 ---
 
 ## Attack Trends & Notable Insights
 
 - **Notable CVEs Exploited:**  
-  - [List significant CVEs observed in attack payloads, e.g., CVE-2017-0144 (EternalBlue), CVE-2021-44228 (Log4Shell), etc.]
+  - [List significant CVEs observed in attack payloads, e.g., CVE-2002-0013 (EternalBlue), CVE-2001-0414 (Log4Shell), CVE-2020-11900 (Log4Shell etc.]
 
 - **Most Frequent Attack Countries:**  
   - [Top attacking source countries, e.g., China, Russia, USA, etc. — Based on geo-IP analysis]
 
 - **Most Targeted Ports:**  
-  - [List common ports attacked: 22 (SSH), 445 (SMB), 80 (HTTP), 3389 (RDP), etc.]
+  - [List common ports attacked: 5005(Java Debug Wire Protocol), 445 (SMB), 30001 (Kubernetes NodePort Services), etc.]
 
 - **Alert Categories:**  
-  - [Examples: Brute-Force, Malware Delivery, Recon/Scanning, Exploit Attempt, etc.]
+  - [Examples: Attempted Administrative Acesss, Misc Attack, Recon/Scanning(Attempted INformation Leak), Exploit Attempt, etc.]
 
 ---
 
