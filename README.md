@@ -1,5 +1,5 @@
 # live-traffic-cyber-threat-analysis-using-honeypot-and-elk-stack
-This project demonstrates my ability to design and deploy a live cyber threat monitoring environment using production-grade tools and methodologies. I engineered a system that leverages honeypots to attract and log malicious activity, and integrated the ELK Stack (Elasticsearch, Logstash, Kibana) for real-time analysis and visualisation of threat data.
+This project demonstrates my ability to design and deploy a live cyber threat monitoring environment using production-grade tools and methodologies. I engineered a system that leverages honeypots to a[...]
 
 **Table of Contents**
 - [Architecture Overview](#architecture-overview)
@@ -11,15 +11,15 @@ This project demonstrates my ability to design and deploy a live cyber threat mo
 
 Key capabilities showcased include:
 
-**Threat Intelligence Collection:** Deployed and hardened honeypots (Cowrie/Dionaea) to emulate vulnerable services, capturing SSH brute-force attempts, malware delivery, and scanning behaviours from live internet traffic.
+**Threat Intelligence Collection:** Deployed and hardened honeypots (Cowrie/Dionaea) to emulate vulnerable services, capturing SSH brute-force attempts, malware delivery, and scanning behaviours from [...]
 
-**Log Aggregation & SIEM Functionality:** Built a custom ELK pipeline to centralise, enrich, and visualise attack data, simulating the core functions of a Security Information and Event Management (SIEM) platform.
+**Log Aggregation & SIEM Functionality:** Built a custom ELK pipeline to centralise, enrich, and visualise attack data, simulating the core functions of a Security Information and Event Management (SI[...]
 
-**Security Automation:** Wrote custom parsing rules and enrichment scripts in Python and Logstash to classify threats, extract indicators of compromise (IoCs), and generate time-based visual analytics.
+**Security Automation:** Wrote custom parsing rules and enrichment scripts in Python and Logstash to classify threats, extract indicators of compromise (IoCs), and generate time-based visual analytics[...]
 
 **Network & Cloud Security Foundations:** Configured firewall rules, segmented the honeynet, and optionally deployed infrastructure on AWS for scalability and remote monitoring.
 
-This project reflects my ability to apply offensive deception techniques and defensive monitoring tools to gain actionable insight into real-world threat behaviour—skills that are directly applicable in SOC, cyber threat intelligence, and defensive security engineering roles.
+This project reflects my ability to apply offensive deception techniques and defensive monitoring tools to gain actionable insight into real-world threat behaviour—skills that are directly applicabl[...]
 
 ---
 
@@ -101,7 +101,12 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
 ## Attack Trends & Notable Insights
 
 - **Notable CVEs Exploited:**  
-  - [List significant CVEs observed in attack payloads, e.g., CVE-2002-0013 (EternalBlue), CVE-2001-0414 (Log4Shell), CVE-2020-11900 (Log4Shell etc.]
+
+  | CVE ID          | Component                | Impact              | Exploitation Method                              |
+  |-----------------|--------------------------|---------------------|--------------------------------------------------|
+  | CVE-2002-0013   | Apache mod_ssl           | DoS                 | Malformed SSL handshake → server crash           |
+  | CVE-2001-0414   | Oracle Web Listener      | DoS                 | Malformed HTTP request → service crash           |
+  | CVE-2020-11900  | Apache APR-util (Expat)  | RCE / DoS           | Malicious XML input → memory corruption          |
 
 - **Most Frequent Attack Countries:**  
   - [Top attacking source countries, e.g., China, Russia, USA, etc. — Based on geo-IP analysis]
@@ -121,7 +126,7 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
   - Machine learning models can be trained on collected data to classify incoming threats and predict potential attack vectors, contributing to smarter defense strategies.
 
 - **Automated Response for Defense:**  
-  - The system can be extended to respond defensively to detected threats, such as dynamic firewall adjustments, automatic blacklisting of hostile IPs, or triggering alerts for SOC investigation—making the environment proactive, not just reactive.
+  - The system can be extended to respond defensively to detected threats, such as dynamic firewall adjustments, automatic blacklisting of hostile IPs, or triggering alerts for SOC investigation—mak[...]
 
 ---
 
