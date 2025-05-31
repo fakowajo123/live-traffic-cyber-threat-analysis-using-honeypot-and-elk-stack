@@ -94,8 +94,8 @@ A simple network diagram illustrates the flow between TPOT (honeypot orchestrati
   - Suspicious command patterns
 
 - **Kibana Dashboards:**  
+  ![Kibana Dashboard ](https://github.com/fakowajo123/live-traffic-cyber-threat-analysis-using-honeypot-and-elk-stack/blob/main/screenshots/Kibana%20Dashboard.jpg)
   ![Kibana Dashboard ](https://github.com/fakowajo123/live-traffic-cyber-threat-analysis-using-honeypot-and-elk-stack/blob/main/screenshots/Kibana%20Dashboard..jpg)
-
 ---
 
 ## Attack Trends & Notable Insights
