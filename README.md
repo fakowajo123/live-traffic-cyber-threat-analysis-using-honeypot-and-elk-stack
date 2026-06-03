@@ -25,7 +25,7 @@ This project reflects my ability to apply offensive deception techniques and def
 
 ## Architecture Overview
 
-A simple network diagram illustrates the flow between TPOT (honeypot orchestration), the ELK stack, and the data pipeline. (Insert diagram here)
+A simple network diagram illustrates the flow between TPOT (honeypot orchestration), the ELK stack, and the data pipeline.
 
 **Data Flow:**  
 1. Internet-sourced attacks hit TPOT-managed honeypots (Cowrie/Dionaea).  
